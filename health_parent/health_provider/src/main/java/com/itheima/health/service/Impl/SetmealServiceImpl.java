@@ -46,7 +46,7 @@ public class SetmealServiceImpl extends ServiceImpl<SetmealMapper, Setmeal> impl
         if(StringUtils.isEmpty(queryPageBean.getQueryString())){
             page = page(new Page<Setmeal>(queryPageBean.getCurrentPage(), queryPageBean.getPageSize()),queryWrapper);
         }else{
-            //   select  * from  xxxx where  name like  or  code like  ? xxx  limit ?,? 查询aa
+            //   select  * from  xxxx where  name like  or  code like  ? xxx  limit ?,? 查询
             queryWrapper.and(i->i.like("name",queryPageBean.getQueryString()).or().like("HELPCODE",queryPageBean.getQueryString()));
             page = page(new Page<Setmeal>(queryPageBean.getCurrentPage(), queryPageBean.getPageSize()),queryWrapper);
         }
