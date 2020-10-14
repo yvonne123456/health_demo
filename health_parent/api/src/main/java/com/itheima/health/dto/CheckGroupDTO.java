@@ -8,8 +8,8 @@ import lombok.Data;
 public class CheckGroupDTO extends CheckGroup {
 
     /**
-     * 选择的检查项id列表
+     * 选择的检查项id列表T
      * */
-    private Long[] itemIds;
+    private Integer[] checkItemId;
 
 }

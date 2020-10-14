@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Data
 public class SetmealDTO extends Setmeal implements Serializable {
 
-    private Long[] groupIds;
+    private Integer[] checkgroupIds;
+
 
 }

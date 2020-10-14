@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 
+
 @Service
 @Transactional
 public class CheckItemServiceImpl extends ServiceImpl<CheckItemMapper, CheckItem> implements CheckItemService {
@@ -22,16 +23,23 @@ public class CheckItemServiceImpl extends ServiceImpl<CheckItemMapper, CheckItem
     public PageResult findPage(QueryPageBean queryPageBean) {
 
         QueryWrapper queryWrapper = new QueryWrapper();//   封装查询条件
-        queryWrapper.eq("is_delete",0);
-        Page<CheckItem> page =null ;
-        if(StringUtils.isEmpty(queryPageBean.getQueryString())){
-            page = page(new Page<CheckItem>(queryPageBean.getCurrentPage(), queryPageBean.getPageSize()),queryWrapper);
-        }else{
+        queryWrapper.eq("is_delete", 0);
+        Page<CheckItem> page = null;
+        if (StringUtils.isEmpty(queryPageBean.getQueryString())) {
+            page = page(new Page<CheckItem>(queryPageBean.getCurrentPage(), queryPageBean.getPageSize()), queryWrapper);
+        } else {
 
-            queryWrapper.like("name",queryPageBean.getQueryString());
-            page = page(new Page<CheckItem>(queryPageBean.getCurrentPage(), queryPageBean.getPageSize()),queryWrapper);
+            queryWrapper.like("name", queryPageBean.getQueryString());
+            page = page(new Page<CheckItem>(queryPageBean.getCurrentPage(), queryPageBean.getPageSize()), queryWrapper);
         }
-        PageResult result = new PageResult(page.getTotal(),page.getRecords());
+        PageResult result = new PageResult(page.getTotal(), page.getRecords());
         return result;
     }
-    }
+
+}
+
+
+
+
+
+

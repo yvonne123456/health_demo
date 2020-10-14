@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @RestController
-@Api(tags = "检查组项目")
+@Api(tags = "检查项目")
 
 public class CheckItemController {
 
@@ -79,6 +79,7 @@ public class CheckItemController {
     }
 
     @DeleteMapping("checkItem/deleteCheckItemById/{id}")
+    @ApiOperation(value ="删除检查项")
     public Result  deleteCheckItemById(@PathVariable("id") int id){
         try {
             CheckItem checkItem = new CheckItem();

@@ -14,11 +14,11 @@ import java.io.InputStream;
 public class AliyunUtils {
 
     // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
-    public  static  String accessKeyId = "填写自己的";
-    public  static String accessKeySecret = "填写自己的";
+    public  static  String accessKeyId = "LTAI4GAcxF3zmkZ6ATa5Uta8";
+    public  static String accessKeySecret = "iu4laBzI53RN58f8w8642MJQn5wC6g";
     // Endpoint以杭州为例，其它Region请按实际情况填写。
-    public  static  String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-    public  static  String bucketName = "填写自己的";//  空间名称
+    public  static  String endpoint = "http://oss-cn-shanghai.aliyuncs.com";
+    public  static  String bucketName = "heima981";//  空间名称
 
 
     /**
@@ -56,7 +56,9 @@ public class AliyunUtils {
 // 关闭OSSClient。
             ossClient.shutdown();
         } catch (Exception e) {
+
             e.printStackTrace();
+
             throw new RuntimeException(e.getMessage());
         }
     }
@@ -71,16 +73,16 @@ public class AliyunUtils {
 
         try {
 // 创建OSSClient实例。
-            OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 
-            ossClient.putObject(bucketName, uuidfilename, new ByteArrayInputStream(bytes));
+         ossClient.putObject(bucketName, uuidfilename, new ByteArrayInputStream(bytes));
 
 // 关闭OSSClient。
-            ossClient.shutdown();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e.getMessage());
-        }
-    }
+         ossClient.shutdown();
+         } catch (Exception e) {
+         e.printStackTrace();
+         throw new RuntimeException(e.getMessage());
+         }
+         }
 
-}
+         }

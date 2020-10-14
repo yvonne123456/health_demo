@@ -6,6 +6,4 @@ import com.itheima.health.pojo.CheckItem;
 
 public interface CheckItemMapper extends BaseMapper<CheckItem> {
 
-
-
 }
