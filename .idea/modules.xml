@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/health_demo.iml" filepath="$PROJECT_DIR$/.idea/health_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/health_parent/health_parent.iml" filepath="$PROJECT_DIR$/health_parent/health_parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/health_parent/health_provider/health_provider.iml" filepath="$PROJECT_DIR$/health_parent/health_provider/health_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_parent/weixin_consumer/weixin_consumer.iml" filepath="$PROJECT_DIR$/health_parent/weixin_consumer/weixin_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_parent/xxxl_job/xxxl_job.iml" filepath="$PROJECT_DIR$/health_parent/xxxl_job/xxxl_job.iml" />
     </modules>
   </component>
 </project>

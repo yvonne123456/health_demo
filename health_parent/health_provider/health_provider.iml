@@ -30,6 +30,8 @@
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="module" module-name="commons" />
+    <orderEntry type="library" name="Maven: junit:junit:4.13" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.3.0.RELEASE" level="project" />
@@ -68,8 +70,6 @@
     <orderEntry type="library" name="Maven: io.opentracing:opentracing-noop:0.33.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-client:1.18.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.18.1" level="project" />
-    <orderEntry type="library" name="Maven: junit:junit:4.13" level="project" />
-    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.oss:aliyun-sdk-oss:3.10.2" level="project" />
     <orderEntry type="library" name="Maven: org.jdom:jdom2:2.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jettison:jettison:1.1" level="project" />

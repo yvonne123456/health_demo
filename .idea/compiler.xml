@@ -11,6 +11,8 @@
         <module name="commons" />
         <module name="health_consumer" />
         <module name="health_provider" />
+        <module name="weixin_consumer" />
+        <module name="xxxl_job" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +21,9 @@
       <module name="health_consumer" target="1.8" />
       <module name="health_parent" target="1.8" />
       <module name="health_provider" target="1.8" />
+      <module name="weixin_consumer" target="1.8" />
+      <module name="xxl_job" target="1.8" />
+      <module name="xxxl_job" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -28,6 +33,9 @@
       <module name="health_consumer" options="-parameters" />
       <module name="health_parent" options="" />
       <module name="health_provider" options="-parameters" />
+      <module name="weixin_consumer" options="-parameters" />
+      <module name="xxl_job" options="-parameters" />
+      <module name="xxxl_job" options="-parameters" />
     </option>
   </component>
 </project>

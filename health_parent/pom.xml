@@ -13,6 +13,9 @@
         <module>health_consumer</module>
         <module>health_provider</module>
         <module>commons</module>
+        <module>xxxl_job</module>
+        <module>weixin_consumer</module>
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

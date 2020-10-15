@@ -74,5 +74,19 @@ public class CheckGroupController {
         }
     }
 
+    @DeleteMapping("CheckGroup/deleteCheckGroupById/{id}")
+    @ApiOperation(value ="删除检查组")
+    public Result  deleteCheckItemById(@PathVariable("id") int id){
+        try {
+            CheckGroup checkGroup = new  CheckGroup();
+            checkGroup.setIs_delete(1);  //  逻辑删除
+            checkGroup.setId(id);
+            checkGroupService.updateById(checkGroup);
+            return  new Result(true, MessageConstant.DELETE_CHECKGROUP_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  new Result(false, MessageConstant.DELETE_CHECKGROUP_FAIL);
+        }
+    }
 
 }

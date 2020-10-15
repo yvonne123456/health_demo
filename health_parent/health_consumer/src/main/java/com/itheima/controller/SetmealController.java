@@ -36,17 +36,14 @@ public class SetmealController {
             String originalFilename = file.getOriginalFilename();
             String uuidfilename = UploadUtils.generateRandonFileName(originalFilename);
             AliyunUtils.uploadMultiPartFileToAliyun(file.getBytes(), uuidfilename);
-
-            redisTemplate.opsForSet().add(RedisConstant.SETMEAL_PIC_RESOURCES,uuidfilename);
-
-
+            redisTemplate.opsForSet().add(RedisConstant.SETMEAL_PIC_RESOURCES, uuidfilename);
             //   服务端生成图片uuid 名称 回送给 前端
             return new Result(true, MessageConstant.PIC_UPLOAD_SUCCESS, uuidfilename);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, MessageConstant.PIC_UPLOAD_FAIL);
         }
-    }
+}
 
 
     @PostMapping("setMeal/add")
