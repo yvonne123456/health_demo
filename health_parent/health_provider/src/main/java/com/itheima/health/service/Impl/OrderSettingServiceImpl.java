@@ -17,22 +17,23 @@ public class OrderSettingServiceImpl extends ServiceImpl<OrderSettingMapper, Ord
     @Override
     public void batchOrderSetting(List<String[]> list) {
 
-        //  解析excel 将数据 转换成Java 对象
-        List<OrderSetting>  orderSettings = StringTOList(list);
-        List<OrderSetting>  orderSettingSave = new ArrayList<OrderSetting>();//   存放没有id 的预约对象
-        List<OrderSetting>  orderSettingUpdate = new ArrayList<OrderSetting>();//   存放有id 的预约对象
-        //  循环遍历集合  查询数据库表中有无 当前日期记录
-        for (OrderSetting orderSetting : orderSettings) {
-            Date orderDate = orderSetting.getOrderDate();
-            QueryWrapper<OrderSetting> queryWrapper = new QueryWrapper<OrderSetting>();
+        List<OrderSetting> orderSettingSave= new ArrayList();
+
+        List<OrderSetting>orderSettingUpdate = new ArrayList();
+
+        List<OrderSetting> allorderSettings = StringTOList(list);
+
+        for (OrderSetting allorderSetting : allorderSettings) {
+            QueryWrapper queryWrapper = new QueryWrapper();
+            Date orderDate = allorderSetting.getOrderDate();
             queryWrapper.eq("ORDERDATE",orderDate);
-            OrderSetting orderSettingIsExist = baseMapper.selectOne(queryWrapper);//  根据条件查询单一记录对象
-            if(orderSettingIsExist!=null){
-                //  批量修改  需要将id  封装到List集合中
-                orderSetting.setId(orderSettingIsExist.getId());//     查询id  封装到 添加OrderSetting 对象
-                orderSettingUpdate.add(orderSetting);
-            }else{
-                orderSettingSave.add(orderSetting);
+            OrderSetting orderSettingExist = baseMapper.selectOne(queryWrapper);
+            if (orderSettingExist==null){
+
+                orderSettingSave.add(allorderSetting);
+            }else {
+                allorderSetting.setId(orderSettingExist.getId());
+                orderSettingUpdate.add(allorderSetting);
             }
         }
         saveBatch(orderSettingSave);

@@ -61,9 +61,9 @@
         <!--阿里云短信依赖 升级版-->
         <dependency>
             <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-java-sdk-core</artifactId>
-            <version>4.5.0</version>
-        </dependency>
+        <artifactId>aliyun-java-sdk-core</artifactId>
+        <version>4.5.0</version>
+    </dependency>
 
         <!--跨服务器文件上传依赖-->
         <dependency>
